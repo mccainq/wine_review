@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :wines
+  resources :wines do
+    get 'page/:page', :action => :index, :on => :collection
+  end
+
+  root 'wines#index'
+
   #get "wines" => "wines#index", as: 'wines'
 
   #get "/wines/:id" => "wines#show", as: 'wine'

@@ -1,5 +1,6 @@
 <h1>Wines</h1>
 <p>Available as of <%= formatted_time(@available_at) %></p>
+<%= page_entries_info @wines %>
 <ol>
   <% @wines.each do |wine| %>
     <li>
@@ -8,6 +9,4 @@
     </li>
   <% end %>
 </ol>
-<br />
-<%= link_to 'New Wine', new_wine_path %>
-</ol>
+<%= paginate @wines %>

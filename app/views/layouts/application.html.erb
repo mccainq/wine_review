@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WineReview</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Wines <%= yield :title %></title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container">
+    <%= render '/layouts/header' %>
+  </div>
+  <div class="container">
+    <div class="col-xs-9">
+      <%= render '/shared/flashes' %>
+      <%= yield %>
+    </div>
+    <div class="col-xs-3">
+      <%= render '/layouts/sidebar' %>
+    </div>
+  </div>
+  <%= render '/layouts/footer' %>
 </body>
 </html>
