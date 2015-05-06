@@ -9,4 +9,11 @@
   <p><label>Varietal:</label> <%= @wine.varietal %></p>
 </article>
 
+<p>
+  Read all
+  <%= link_to pluralize(@wine.log_entries.size, 'log entry'),
+                        wine_log_entries_path(@wine) %>
+</p>
+<br />
+
 <%= link_to 'All wines', wines_path %> | <%= link_to 'Edit', edit_wine_path(@wine) %>

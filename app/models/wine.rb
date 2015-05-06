@@ -6,4 +6,6 @@ class Wine < ActiveRecord::Base
     numericality: { only_integer: true },
     if: "year.present?"
   validates :varietal, inclusion: { in: VARIETALS }
+
+  has_many :log_entries
 end
